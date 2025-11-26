@@ -1,0 +1,304 @@
+/* ===============================
+   VARIÁVEIS GERAIS
+================================*/
+:root {
+  --verde-1: #007f3f;
+  --verde-2: #009739;
+  --verde-3: #66bb6a;
+  --azul-claro: #6b9cff;
+  --azul-marinho: #290066;
+  --branco: #ffffff;
+  --destaque-grad: linear-gradient(90deg, #ff7ab6, #6b9cff);
+  --rounded: 14px;
+  --card-shadow: 0 14px 40px rgba(6, 22, 56, 0.09);
+  --ease: cubic-bezier(.2, .9, .3, 1);
+}
+
+/* ===============================
+   RESET & BASE
+================================*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", "Inter", system-ui, Arial, sans-serif;
+  background: linear-gradient(180deg, #fcf6ff 0%, #eef1f9 100%);
+  color: #0b2433;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 76px;
+}
+
+/* ===============================
+   NAVBAR
+================================*/
+.navbar-custom {
+  background: linear-gradient(90deg, rgba(0, 151, 57, 0.95), rgba(0, 51, 102, 0.95));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 6px 22px rgba(3, 20, 34, 0.12);
+  backdrop-filter: blur(6px);
+}
+
+.navbar-brand {
+  font-weight: 800;
+  color: #FFD700 !important;
+  letter-spacing: 0.6px;
+  font-size: 1.15rem;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+/* ===============================
+   HERO / BANNER (corrigido)
+================================*/
+.hero {
+  margin: 18px;
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.25), rgba(0, 151, 57, 0.15));
+  border-radius: 18px;
+  padding: 48px 28px;
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+
+.hero-left {
+  max-width: 66%;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+
+  /* Gradiente de texto visível e compatível */
+  background: linear-gradient(90deg, #ffffff 10%, #b5d4ff 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffffff; /* fallback */
+  
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.hero p {
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+
+/* ===============================
+   BOTÕES
+================================*/
+.btn-main {
+  background: var(--destaque-grad);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 10px 28px rgba(107, 156, 255, 0.16);
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+}
+
+.btn-main:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 18px 44px rgba(107, 156, 255, 0.22);
+}
+
+.btn-outline-v {
+  border: 2px solid var(--verde-2);
+  color: var(--verde-2);
+  background: transparent;
+  padding: 9px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: all .22s var(--ease);
+}
+
+.btn-outline-v:hover {
+  background: var(--verde-2);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ===============================
+   SEÇÕES
+================================*/
+.section {
+  margin: 22px 18px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 18px 40px rgba(10, 30, 60, 0.05);
+}
+
+.section h2 {
+  color: var(--azul-marinho);
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+}
+
+/* ===============================
+   CARDS
+================================*/
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.card-modern {
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fff, #f8feff);
+  transition: transform .28s var(--ease), box-shadow .28s var(--ease);
+  cursor: pointer;
+  border: 1px solid rgba(8, 30, 60, 0.04);
+}
+
+.card-modern:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(6, 22, 56, 0.10);
+}
+
+.card-modern .thumb {
+  height: 150px;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+
+.card-modern .body {
+  padding: 14px;
+}
+
+.card-modern h5 {
+  color: var(--azul-marinho);
+  margin-bottom: 8px;
+}
+
+.card-modern p {
+  color: #223355;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+/* ===============================
+   CARROSSEL
+================================*/
+.carousel-fade .carousel-item {
+  transition: opacity .7s ease-in-out;
+}
+
+.carousel-item {
+  min-height: 140px;
+}
+
+/* ===============================
+   MODAL
+================================*/
+.modal-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* ===============================
+   IMAGENS ALINHADAS
+================================*/
+.img-left {
+  float: left;
+  margin-right: 12px;
+  width: 45%;
+  border-radius: 10px;
+}
+
+.img-right {
+  float: right;
+  margin-left: 12px;
+  width: 45%;
+  border-radius: 10px;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ===============================
+   RODAPÉ
+================================*/
+.footer {
+  margin-top: 26px;
+  padding: 28px 18px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--azul-marinho), var(--verde-1));
+  color: #fff;
+}
+
+.footer .brand {
+  font-weight: 800;
+  color: #ffd966;
+  font-size: 1.1rem;
+}
+
+/* ===============================
+   ANIMAÇÕES
+================================*/
+.fade-slide-up {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp .6s forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVIDADE
+================================*/
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    gap: 12px;
+    padding: 22px;
+    text-align: center;
+  }
+
+  .hero-left {
+    max-width: 100%;
+  }
+
+  .img-left,
+  .img-right {
+    width: 100%;
+    float: none;
+    margin: 12px auto;
+    display: block;
+  }
+}
